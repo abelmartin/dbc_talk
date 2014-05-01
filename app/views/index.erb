@@ -6,13 +6,21 @@
 <% end %>
 
 <div id="main">
-  <ul id='type_filters'>
-    <% @types.each do |type| %>
+  <h2>Pokemon Filters</h2>
+  <div id='filters'>
+    <ul>
       <li>
-        <a href='/?<%= type %>' class='<%= type %> pokemon-type' ><%= type %></a>
+        <a href='/' class='pokemon-type' >all</a>
       </li>
-    <% end %>
-  </ul>
+      <% @types.each do |type| %>
+        <li>
+          <a href='/?type=<%= type %>' class='<%= type %> pokemon-type' ><%= type %></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <hr/>
 
   <!-- The similarities between #captured_pokemon & #free_pokemon aren't coincidence :-) -->
   <div id='captured_pokemon'>
@@ -28,6 +36,7 @@
              onerror="this.onerror=null;this.src='/images/new_pokemon.png'" />
         <p class='<%=pokemon.type%> pokemon-type'> <%=pokemon.type%> </p>
         <form method='post' action="/release/<%=pokemon.id%>">
+          <input type='hidden' name='type' value='<%=params[:type]%>'></input>
           <input type='submit' value='Release!'></input>
         </form>
       </div>
@@ -49,6 +58,7 @@
              onerror="this.onerror=null;this.src='/images/new_pokemon.png'" />
         <p class='<%=pokemon.type%> pokemon-type'> <%=pokemon.type%> </p>
         <form method='post' action="/catch/<%=pokemon.id%>">
+          <input type='hidden' name='type' value='<%=params[:type]%>'></input>
           <input type='submit' value='Catch!'></input>
         </form>
       </div>

@@ -1,19 +1,12 @@
+#captured_pokemon {
+  clear: both;
+  margin-top: 15px;
+}
+
 #flash_message {
   background-color: #BBF;
   border: solid 3px #99F;
   padding: 10px;
-}
-
-#type_filters {
-  display: none;
-}
-
-#type_filters ul{
-
-}
-
-#type_filters li{
-
 }
 
 #main {
@@ -23,19 +16,32 @@
   text-align: left;
 }
 
+#filters ul {
+  list-style: none;
+  margin-top: 0;
+  padding: 0;
+}
+
+#filters li{
+  border: solid 1px;
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
 .pokemon-container {
   border: solid 1px gray;
   display: inline-block;
-  height: 220px;
-  padding: 10px 0;
+  padding: 5px 0 7px;
   margin-bottom: 10px;
   text-align: center;
   width: 150px;
 }
 
 .pokemon-container img {
-  height: 96px;
-  width: 96px;
+  height: 72px;
+  width: 72px;
 }
 
 .pokemon-container h3 {margin-top: 0; }
@@ -61,7 +67,11 @@
 .dark {color: #574438 }
 .fairy {color: #d044d0 }
 
+header img {height: 50px; }
+header h1 {
+  font-size: 3em;
+  margin: 10px auto;
+}
 body {text-align: center; }
 header {margin: 0 auto; }
-header h1 {font-size: 3em; }
-header img {height: 50px; }
+h2{margin: 0 auto 10px;}

@@ -1,6 +1,6 @@
 ## Controllers & Models refactoring...with Pokemon!
 
-![Action Shot](https://cloud.githubusercontent.com/assets/29429/2852860/7ab7ca10-d13c-11e3-9d0c-561c726625fe.png)
+![Action Shot](https://cloud.githubusercontent.com/assets/29429/2856537/e96e2548-d16a-11e3-8749-0fcfb87a97bc.png)
 
 ## Quickstart
 
