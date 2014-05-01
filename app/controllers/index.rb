@@ -12,8 +12,6 @@ get '/' do
     shadow steel unknown water
   )
 
-  NotificationService.tell_friends 'yo'
-
   erb :index
 end
 

@@ -4,6 +4,18 @@
   padding: 10px;
 }
 
+#type_filters {
+  display: none;
+}
+
+#type_filters ul{
+
+}
+
+#type_filters li{
+
+}
+
 #main {
   margin: 0 auto 40px;
   width: 800px;

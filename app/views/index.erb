@@ -6,6 +6,15 @@
 <% end %>
 
 <div id="main">
+  <ul id='type_filters'>
+    <% @types.each do |type| %>
+      <li>
+        <a href='/?<%= type %>' class='<%= type %> pokemon-type' ><%= type %></a>
+      </li>
+    <% end %>
+  </ul>
+
+  <!-- The similarities between #captured_pokemon & #free_pokemon aren't coincidence :-) -->
   <div id='captured_pokemon'>
     <h2>Captured Pokemon</h2>
     <% @captured_pokemon.each do |pokemon|  %>
@@ -15,10 +24,11 @@
             <%= pokemon.name %>
           </a>
         </h3>
-        <img src='http://img.pokemondb.net/artwork/<%=pokemon.name.downcase%>.jpg' />
+        <img src='http://img.pokemondb.net/artwork/<%=pokemon.name.downcase%>.jpg'
+             onerror="this.onerror=null;this.src='/images/new_pokemon.png'" />
         <p class='<%=pokemon.type%> pokemon-type'> <%=pokemon.type%> </p>
         <form method='post' action="/release/<%=pokemon.id%>">
-          <input type='submit', value='Release!'></input>
+          <input type='submit' value='Release!'></input>
         </form>
       </div>
     <% end %>
@@ -39,7 +49,7 @@
              onerror="this.onerror=null;this.src='/images/new_pokemon.png'" />
         <p class='<%=pokemon.type%> pokemon-type'> <%=pokemon.type%> </p>
         <form method='post' action="/catch/<%=pokemon.id%>">
-          <input type='submit', value='Catch!'></input>
+          <input type='submit' value='Catch!'></input>
         </form>
       </div>
     <% end %>
