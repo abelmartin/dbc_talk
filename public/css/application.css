@@ -8,7 +8,24 @@
 .pokemon-container {
   border: solid 1px gray;
   display: inline-block;
-  padding: 10px;
+  height: 220px;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 150px;
+}
+
+.pokemon-container img {
+  height: 96px;
+  width: 96px;
+}
+
+.pokemon-container h3 {
+  margin-top: 0;
+}
+
+.pokemon-type {
+  font-weight: bold;
 }
 
 header {

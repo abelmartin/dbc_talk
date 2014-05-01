@@ -16,4 +16,6 @@ ActiveRecord::Base.connection.execute("TRUNCATE TABLE pokemons RESTART IDENTITY"
     pk.attack = poke_data['attack']
     pk.defense = poke_data['defense']
   end
+
+  ##Wild DBC Pokemon
 end

@@ -17,7 +17,10 @@ gem 'activerecord'
 gem 'rake'
 
 gem 'shotgun'
-gem 'debugger'
+
+gem 'pry'
+gem 'pry-debugger'
+
 
 gem 'httparty'
 
