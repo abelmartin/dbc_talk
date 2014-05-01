@@ -1,10 +1,27 @@
-.container {
-  margin: 20px auto;
-  width: 600px;
+#main {
+  margin: 0 auto 40px;
+  width: 800px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  text-align: left;
 }
 
-th {
-  text-align: left;
+.pokemon-container {
+  border: solid 1px gray;
+  display: inline-block;
+  padding: 10px;
+}
+
+header {
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 3em;
+}
+header img {
+  height: 50px;
+}
+
+body {
+  text-align: center;
 }
