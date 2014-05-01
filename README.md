@@ -1,4 +1,6 @@
-## An app to demonstrate how to refactor your controllers & models
+## Controllers & Models refactoring
+
+![Action Shot](https://cloud.githubusercontent.com/assets/29429/2852860/7ab7ca10-d13c-11e3-9d0c-561c726625fe.png)
 
 ## Quickstart
 
