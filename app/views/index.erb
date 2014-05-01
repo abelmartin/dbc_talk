@@ -1,9 +1,20 @@
+<% if flash[:notice] %>
+  <div id='flash_message'>
+    <%= flash[:notice] %>
+    <a href='#' class='close'>dismiss</a>
+  </div>
+<% end %>
+
 <div id="main">
   <div id='captured_pokemon'>
     <h2>Captured Pokemon</h2>
     <% @captured_pokemon.each do |pokemon|  %>
       <div class='pokemon-container'>
-        <h3><%= pokemon.name %></h3>
+        <h3>
+          <a href='http://pokemondb.net/pokedex/<%=pokemon.id%>'>
+            <%= pokemon.name %>
+          </a>
+        </h3>
         <img src='http://img.pokemondb.net/artwork/<%=pokemon.name.downcase%>.jpg' />
         <p class='<%=pokemon.type%> pokemon-type'> <%=pokemon.type%> </p>
         <form method='post' action="/release/<%=pokemon.id%>">
@@ -19,7 +30,11 @@
     <h2>Free Pokemon</h2>
     <% @free_pokemon.each do |pokemon|  %>
       <div class='pokemon-container'>
-        <h3><%= pokemon.name %></h3>
+        <h3>
+          <a href='http://pokemondb.net/pokedex/<%=pokemon.id%>' target='blank'>
+            <%= pokemon.name %>
+          </a>
+        </h3>
         <img src='http://img.pokemondb.net/artwork/<%=pokemon.name.downcase%>.jpg' />
         <p class='<%=pokemon.type%> pokemon-type'> <%=pokemon.type%> </p>
         <form method='post' action="/catch/<%=pokemon.id%>">

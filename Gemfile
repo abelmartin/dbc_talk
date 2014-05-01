@@ -18,10 +18,10 @@ gem 'rake'
 
 gem 'shotgun'
 
+# Gems I like
 gem 'pry'
 gem 'pry-debugger'
-
-
+gem 'rack-flash3'
 gem 'httparty'
 
 group :test do

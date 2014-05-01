@@ -1,3 +1,9 @@
+#flash_message {
+  background-color: #BBF;
+  border: solid 3px #99F;
+  padding: 10px;
+}
+
 #main {
   margin: 0 auto 40px;
   width: 800px;

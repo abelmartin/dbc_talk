@@ -19,10 +19,11 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 
 require 'erb'
+
 require 'httparty'
+require 'rack-flash'
 require 'pry'
 require 'pry-debugger'
-
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
@@ -41,9 +42,10 @@ configure do
   set :views, File.join(Sinatra::Application.root, "app", "views")
 end
 
-# Set up the controllers and helpers
+# Set up the controllers, helpers, & lib
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
+Dir[APP_ROOT.join('app', 'lib', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')

@@ -1,3 +1,6 @@
+enable :sessions
+use Rack::Flash
+
 get '/' do
   #Searching
   @captured_pokemon = Pokemon.where(caught: true).order(:type)
@@ -8,6 +11,8 @@ get '/' do
     ghost grass ground ice normal poison psychic rock
     shadow steel unknown water
   )
+
+  NotificationService.tell_friends 'yo'
 
   erb :index
 end
@@ -27,9 +32,9 @@ post '/catch/:id' do
   if caught_count < 2 && @types.include?( found_pokemon.type )
     found_pokemon.caught = true
     found_pokemon.save
-    puts "Hey! Friends! I caught #{found_pokemon.name.upcase}!"
+    NotificationService.tell_friends "I caught #{found_pokemon.name.upcase}!"
   else
-    puts "Had to let #{found_pokemon.name.upcase} go. :'("
+    flash[:notice] = "damn Damn DAMN! #{found_pokemon.name.upcase} got away!"
   end
 
   redirect '/'
@@ -39,6 +44,10 @@ post '/release/:id' do
   found_pokemon = Pokemon.where(id: params[:id]).first
   found_pokemon.caught = false
   found_pokemon.save
+
+  release_message = "#{found_pokemon.name} was released back into the wild"
+  flash[:notice] = release_message
+  NotificationService.tell_friends release_message
 
   redirect '/'
 end
