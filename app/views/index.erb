@@ -11,7 +11,7 @@
     <% @captured_pokemon.each do |pokemon|  %>
       <div class='pokemon-container'>
         <h3>
-          <a href='http://pokemondb.net/pokedex/<%=pokemon.id%>'>
+          <a href='http://pokemondb.net/pokedex/<%=pokemon.id%>' target='blank'>
             <%= pokemon.name %>
           </a>
         </h3>
@@ -35,7 +35,8 @@
             <%= pokemon.name %>
           </a>
         </h3>
-        <img src='http://img.pokemondb.net/artwork/<%=pokemon.name.downcase%>.jpg' />
+        <img src='http://img.pokemondb.net/artwork/<%=pokemon.name.downcase%>.jpg'
+             onerror="this.onerror=null;this.src='/images/new_pokemon.png'" />
         <p class='<%=pokemon.type%> pokemon-type'> <%=pokemon.type%> </p>
         <form method='post' action="/catch/<%=pokemon.id%>">
           <input type='submit', value='Catch!'></input>

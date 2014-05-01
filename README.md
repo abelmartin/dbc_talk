@@ -1,24 +1,13 @@
-### Purpose
-The Sinatra Skeleton:
+## An app to demonstrate how to refactor your controllers & models
 
-1. Provides a foundation for building challenges.
-2. Demonstrates a reasonable set of practices around building Sinatra applications.
-3. Eases the transition to Rails for Dev Bootcamp students
-4. Demonstrates that it is not **required** that all models in `app/models` be
-   `ActiveRecord` backed!
-5. Gives bare-bones RSpec skeleton wherewith to start building the practice of testing
-
-### Quickstart
+## Quickstart
 
 1.  `bundle install`
-2.  `shotgun config.ru`
+1.  `rake db:reset`
+1.  `shotgun config.ru`
 
-### Contributing
+## Resources
 
-We would love for you to help make the skeleton more awesome, There are three ways to contribute:
-
-1. Ask for a bug fix or enhancement!
-2. Submit a pull request for a bug fix or enhancement!
-3. Code review an open pull request!
-
-Be prepared to give and receive specific, actionable, and kind feedback!
+1. [Pokemon Font - Deviant Art](http://likeleen.deviantart.com/art/Pokemon-Font-315335566)
+1. [Pokemon Logo - Wikipedia](http://en.wikipedia.org/wiki/Pok%C3%A9mon)
+1. [Pokemon Data - PokeApi](http://pokeapi.co/)

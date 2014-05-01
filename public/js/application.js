@@ -5,6 +5,6 @@ $(document).ready(function() {
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
   $('#flash_message .close').click(function(){
-    $(this).parents('#flash_message').hide();
+    $(this).parents('#flash_message').fadeOut();
   });
 });
