@@ -1,0 +1,14 @@
+<div class='pokemon-container'>
+  <h3>
+    <a href='http://pokemondb.net/pokedex/<%=pokemon.id%>' target='blank'>
+      <%= pokemon.name %>
+    </a>
+  </h3>
+  <img src='http://img.pokemondb.net/artwork/<%=pokemon.name.downcase%>.jpg'
+       onerror="this.onerror=null;this.src='/images/new_pokemon.png'" />
+  <p class='<%=pokemon.type%> pokemon-type'> <%=pokemon.type%> </p>
+  <form method='post' action="/<%=action%>/<%=pokemon.id%>">
+    <input type='hidden' name='type' value='<%=params[:type]%>'></input>
+    <input type='submit' value='<%=action.to_s.humanize%>!'></input>
+  </form>
+</div>

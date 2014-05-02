@@ -22,24 +22,10 @@
 
   <hr/>
 
-  <!-- The similarities between #captured_pokemon & #free_pokemon aren't coincidence :-) -->
   <div id='captured_pokemon'>
     <h2>Captured Pokemon</h2>
     <% @captured_pokemon.each do |pokemon|  %>
-      <div class='pokemon-container'>
-        <h3>
-          <a href='http://pokemondb.net/pokedex/<%=pokemon.id%>' target='blank'>
-            <%= pokemon.name %>
-          </a>
-        </h3>
-        <img src='http://img.pokemondb.net/artwork/<%=pokemon.name.downcase%>.jpg'
-             onerror="this.onerror=null;this.src='/images/new_pokemon.png'" />
-        <p class='<%=pokemon.type%> pokemon-type'> <%=pokemon.type%> </p>
-        <form method='post' action="/release/<%=pokemon.id%>">
-          <input type='hidden' name='type' value='<%=params[:type]%>'></input>
-          <input type='submit' value='Release!'></input>
-        </form>
-      </div>
+      <%=erb :_pokemon_container, locals: { pokemon: pokemon, action: :release }%>
     <% end %>
   </div>
 
@@ -48,20 +34,7 @@
   <div id='free_pokemon'>
     <h2>Free Pokemon</h2>
     <% @free_pokemon.each do |pokemon|  %>
-      <div class='pokemon-container'>
-        <h3>
-          <a href='http://pokemondb.net/pokedex/<%=pokemon.id%>' target='blank'>
-            <%= pokemon.name %>
-          </a>
-        </h3>
-        <img src='http://img.pokemondb.net/artwork/<%=pokemon.name.downcase%>.jpg'
-             onerror="this.onerror=null;this.src='/images/new_pokemon.png'" />
-        <p class='<%=pokemon.type%> pokemon-type'> <%=pokemon.type%> </p>
-        <form method='post' action="/catch/<%=pokemon.id%>">
-          <input type='hidden' name='type' value='<%=params[:type]%>'></input>
-          <input type='submit' value='Catch!'></input>
-        </form>
-      </div>
+      <%=erb :_pokemon_container, locals: { pokemon: pokemon, action: :catch }%>
     <% end %>
   </div>
 </div>
