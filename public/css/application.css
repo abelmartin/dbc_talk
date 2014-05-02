@@ -45,8 +45,14 @@
 }
 
 .pokemon-container h3 {margin-top: 0; }
+.pokemon-container .pokemon-type {
+  margin-bottom: 10px;
+}
 
-.pokemon-type {font-weight: bold; }
+.pokemon-type {
+  display: block;
+  font-weight: bold;
+}
 
 .normal {color: #7a7a57 }
 .fire {color: #cc6d29 }
