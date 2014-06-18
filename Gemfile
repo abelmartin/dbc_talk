@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.0'
+ruby '2.1.2'
 
 # PostgreSQL driver
 gem 'pg'
@@ -20,7 +20,7 @@ gem 'shotgun'
 
 # Gems I like
 gem 'pry'
-gem 'pry-debugger'
+gem 'pry-byebug'
 gem 'rack-flash3'
 gem 'httparty'
 
